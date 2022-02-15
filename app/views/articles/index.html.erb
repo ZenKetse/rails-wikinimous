@@ -1,7 +1,10 @@
 <h1>Enjoy all articles</h1>
 
+<%= link_to "Create New Article", articles_new_path %>
+
 <% @articles.each do |article| %>
 <h3><%= article.title %></h3>
 <p><%= article.content %></p>
-<%= link_to "Show Article", "/#{article.id}" %>
+<%= link_to "Show Article", article_path(article) %>
+<%= link_to "Edit Article", "article/#{article.id}/edit" %>
 <% end %>
